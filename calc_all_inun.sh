@@ -11,6 +11,7 @@ for D in 12*; do
         cp ../calc_inun.py .
         python calc_inun.py
         echo "${D} done"
+        date
         cd ..
     fi
 done

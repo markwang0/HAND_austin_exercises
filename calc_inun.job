@@ -15,6 +15,7 @@
 
 date
 
+export work_dir="/work2/08291/mwa/stampede2"
 source $work_dir/miniconda3/etc/profile.d/conda.sh
 conda activate gis-env
 
