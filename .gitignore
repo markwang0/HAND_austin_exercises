@@ -1,0 +1,11 @@
+12*/
+archive/
+AustinExerciseModules/
+done*/
+
+*.zip
+
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints
