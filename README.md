@@ -57,7 +57,7 @@ conda create -f hand_austin_exercises.yml
 conda activate hand-austin-exercises
 ```
 
-Within the `HAND_exercise_modules` directory run:
+Within the `HAND_austin_exercises` directory run:
 
 ```sh
 sudo chmod +x crop_all_hand.sh
@@ -68,7 +68,7 @@ Or run `crop_hand.py` within each HUC8 subdirectory.
 
 ### Calculate inundation for each FATSGTID
 
-Within the `HAND_exercise_modules` directory run:
+Within the `HAND_austin_exercises` directory run:
 
 ```sh
 sudo chmod +x calc_all_inun.sh
