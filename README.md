@@ -41,6 +41,7 @@ HAND_austin_exercises
 ├── calc_all_inun.sh
 ├── calc_inun.job
 ├── calc_inun.py
+├── calc_profiles.ipynb
 ├── crop_all_hand.sh
 ├── crop_hand.py
 ├── hand_austin_exercises.yml
@@ -91,4 +92,5 @@ gdalwarp -dstnodata -9999 \
 ```
 
 ### Generate discharge and WSE profiles
-WIP
+
+Follow the instructions in the `calc_profiles.ipynb` Jupyter notebook
