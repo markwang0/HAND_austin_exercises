@@ -87,7 +87,7 @@ cd 12090204/inundation/mod3b
 gdalwarp -dstnodata -9999 \
          -srcnodata -9999 \
          -co "COMPRESS=LZW" \
-          healed_*.tif 12090204_mod3b_healed_mosaic.tif
+          healed_*.tif mod3b_healed_mosaic.tif
 ```
 
 ### Generate discharge and WSE profiles
