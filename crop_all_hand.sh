@@ -8,7 +8,7 @@ for D in 12*; do
     if [ -d "${D}" ]; then
         cd "${D}"
         cp ../crop_hand.py .
-        python crop_dem.py
+        python crop_hand.py
         echo "${D} done"
         cd ..
     fi

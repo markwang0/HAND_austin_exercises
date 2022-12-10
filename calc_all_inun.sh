@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# run crop_hand.py in each HUC8 directory
+# run crop_inun.py in each HUC8 directory
 # HUC8 directories of interest begin with 12*
 # activate gis-env conda environment first
 
