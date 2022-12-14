@@ -4,8 +4,8 @@ import pandas as pd
 import rasterio as rio
 
 
-module1_df = pd.read_csv("mod1_rev.csv") # missing stages filled in
-module1_df.rename(columns={"HydroID":"FATSGTID"})
+module1_df = pd.read_csv("mod1_rev.csv")  # missing stages filled in
+module1_df = module1_df.rename(columns={"HydroID": "FATSGTID"})
 
 mod_dfs_temp = [module1_df]
 
@@ -20,9 +20,7 @@ for mod_df in mod_dfs_temp:
     mod_df = mod_df[mod_df["FATSGTID"].isin(catch_df["HydroID"])]
     mod_dfs.append(mod_df)
 
-for (mod_df, name) in zip(
-    mod_dfs, ["mod1"]
-):
+for (mod_df, name) in zip(mod_dfs, ["mod1"]):
     for fatsgtid in mod_df["FATSGTID"]:
         if len(mod_df["stage_m"].loc[mod_df["FATSGTID"] == fatsgtid]) != 0:
             stage = mod_df["stage_m"].loc[mod_df["FATSGTID"] == fatsgtid].item()
