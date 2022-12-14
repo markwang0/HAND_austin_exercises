@@ -1,6 +1,8 @@
+.DS_Store
+
 12*/
 archive/
-AustinExerciseModules/
+AustinExerciseModules*/
 done*/
 
 *.zip
