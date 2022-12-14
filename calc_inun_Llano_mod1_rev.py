@@ -5,7 +5,6 @@ import rasterio as rio
 
 
 module1_df = pd.read_csv("mod1_rev.csv")  # missing stages filled in
-module1_df = module1_df.rename(columns={"HydroID": "FATSGTID"})
 
 mod_dfs_temp = [module1_df]
 

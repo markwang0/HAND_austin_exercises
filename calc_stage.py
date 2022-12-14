@@ -22,19 +22,20 @@ llano_hydrotable = llano_hydrotable.drop(columns="HydroID")
 mod1_comids_q_df["stage"] = np.nan
 for hydroid in mod1_comids_q_df.index:
     # for each HydroID, subset hydrotable.csv
-    # to get the HydroID specific rating table 
+    # to get the HydroID specific rating table
     # and interpolate stage from discharge
     stage = np.interp(
         mod1_comids_q_df.loc[hydroid, "DischargeCMS"],
         llano_hydrotable.loc[hydroid, "discharge_cms"],
         llano_hydrotable.loc[hydroid, "stage"],
     )
-    mod1_comids_q_df.loc[hydroid,'stage'] = stage
+    mod1_comids_q_df.loc[hydroid, "stage"] = stage
 
-# save file with interpolated stage values
+# save file with interpolated stage values and correct column names
+mod1_comids_q_df.index = mod1_comids_q_df.index.rename("FATSGTID")
+mod1_comids_q_df = mod1_comids_q_df.rename(
+    columns={"stage": "stage_m"},
+)
 mod1_comids_q_df.to_csv(
     "12090204/mod1_rev.csv",
 )
-
-
-
