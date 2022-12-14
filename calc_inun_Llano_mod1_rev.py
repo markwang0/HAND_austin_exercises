@@ -16,7 +16,8 @@ catch_df = gpd.read_file(
 # keep only those FATSGTIDs present in this HUC8
 mod_dfs = []
 for mod_df in mod_dfs_temp:
-    mod_df = mod_df[mod_df["FATSGTID"].isin(catch_df["HydroID"])]
+    # changed FATSGTID below to HydroID
+    mod_df = mod_df[mod_df["HydroID"].isin(catch_df["HydroID"])]
     mod_dfs.append(mod_df)
 
 for (mod_df, name) in zip(
