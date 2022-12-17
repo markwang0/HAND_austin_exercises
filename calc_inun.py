@@ -57,7 +57,7 @@ for (mod_df, name) in zip(
                 msk = (~inun.mask * 255).astype("uint8")
                 with rio.Env(GDAL_TIFF_INTERNAL_MASK=True):
                     with rio.open(
-                        f"{huc8_path}/inundation/{name}/{heal_status}_inun_{hydroid}.tif",
+                        f"{huc8_path}/inundation_rev/{name}/{heal_status}_inun_{hydroid}.tif",
                         "w",
                         **profile,
                     ) as ds_out:
