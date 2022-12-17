@@ -63,10 +63,10 @@ for (mod_df, name) in zip(
         stage = np.interp(
             mod_df.loc[hydroid, "streamflow"],
             hydrotable.loc[hydroid, "discharge_cms"],
-            hydrotable.loc[hydroid, "stage_m"],
+            hydrotable.loc[hydroid, "stage"],
         )
         mod_df.loc[hydroid, "stage_m"] = stage
 
     mod_df.to_csv(
-        "{name}_stage.csv",
+        f"./AustinExerciseModules_rev/{name}_stage.csv",
     )
