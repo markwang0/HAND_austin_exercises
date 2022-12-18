@@ -14,10 +14,10 @@ for i in ${mods[@]}; do
 -srcnodata -9999 \
 -co \"COMPRESS=LZW\" \
 mosaic/*_mod${i}_healed_mosaic.tif \
-mosaic/mod${i}_healed_full_mosaic.tif" >> full_mosaic_launcher.sh
+full_mosaic/mod${i}_healed_full_mosaic.tif" >> full_mosaic_launcher.sh
     echo "gdalwarp -dstnodata -9999 \
 -srcnodata -9999 \
 -co \"COMPRESS=LZW\" \
 mosaic/*_mod${i}_unhealed_mosaic.tif \
-mosaic/mod${i}_unhealed_full_mosaic.tif" >> full_mosaic_launcher.sh
+full_mosaic/mod${i}_unhealed_full_mosaic.tif" >> full_mosaic_launcher.sh
 done
