@@ -8,11 +8,21 @@ import sys
 huc8_path = sys.argv[1]
 calc_id = sys.argv[2]
 
-module1_df = pd.read_csv(f"./AustinExerciseModules_rev/{calc_id}_mod1_stage.csv")
-module2a_df = pd.read_csv(f"./AustinExerciseModules_rev/{calc_id}_mod2a_stage.csv")
-module2b_df = pd.read_csv(f"./AustinExerciseModules_rev/{calc_id}_mod2b_stage.csv")
-module3a_df = pd.read_csv(f"./AustinExerciseModules_rev/{calc_id}_mod3a_stage.csv")
-module3b_df = pd.read_csv(f"./AustinExerciseModules_rev/{calc_id}_mod3b_stage.csv")
+module1_df = pd.read_csv(
+    f"./AustinExerciseModules_rev/{calc_id}_mod1_stage.csv"
+)
+module2a_df = pd.read_csv(
+    f"./AustinExerciseModules_rev/{calc_id}_mod2a_stage.csv"
+)
+module2b_df = pd.read_csv(
+    f"./AustinExerciseModules_rev/{calc_id}_mod2b_stage.csv"
+)
+module3a_df = pd.read_csv(
+    f"./AustinExerciseModules_rev/{calc_id}_mod3a_stage.csv"
+)
+module3b_df = pd.read_csv(
+    f"./AustinExerciseModules_rev/{calc_id}_mod3b_stage.csv"
+)
 
 mod_dfs_temp = [
     module1_df,
@@ -30,6 +40,8 @@ catch_df = gpd.read_file(
 # keep only those HydroIDs present in this HUC8 (HydroID == FATSGTID)
 mod_dfs = []
 for mod_df in mod_dfs_temp:
+    if ("FATSGTID" in mod_df.columns) and ("HydroID" not in mod_df.columns):
+        mod_df = mod_df.rename(columns={"FATSGTID": "HydroID"})
     mod_df = mod_df[mod_df["HydroID"].isin(catch_df["HydroID"])]
     mod_dfs.append(mod_df)
 
