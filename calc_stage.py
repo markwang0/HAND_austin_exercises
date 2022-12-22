@@ -40,7 +40,7 @@ for name in ["1", "2a", "2b", "3a", "3b"]:
         mod_df.loc[hydroid, "stage_m"] = stage
 
     mod_df.to_csv(
-        f"./AustinExerciseModules_rev/mod{name}_stage.csv",
+        f"./AustinExerciseModules_rev/20221221_mod{name}_stage.csv",
     )
 
     del mod_df
